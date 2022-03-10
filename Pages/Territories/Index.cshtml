@@ -1,0 +1,39 @@
+﻿@page
+@model Razor.Pages.Practica.Pages.Territories.IndexModel
+@{
+}
+
+
+
+
+<form method="post">
+    <h1 class="display-4">Territories</h1>
+    <a asp-page="Add" class="btn btn-success">Add</a>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th style="width:40px">ID</th>
+                <th>TerritoryDescription</th>
+                <th style="width:100px">
+
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Territories)
+            {
+            <tr>
+                <td>@item.Territoryid</td>
+                <td>@item.TerritoryDescription</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@item.Territoryid" class="btn btn-primary"> Edit </a>
+                    <button asp-route-id="@item.Territoryid" class="btn btn-danger"> Delete </button>
+
+                </td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</form>

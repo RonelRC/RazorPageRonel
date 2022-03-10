@@ -1,0 +1,31 @@
+﻿@page
+@model Razor.Pages.Practica.Pages.Territories.AddModel
+@{
+}
+
+<h1> Add your Terrytory Description </h1>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+<div class="alert-danger alert-danger">
+    @Model.ErrorMessage
+</div>
+
+}
+
+<form method="post">
+
+    <div class="form-group">
+        <label asp-for="Territory.Territoryid"></label>
+        <input asp-for="Territory.Territoryid" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Territory.TerritoryDescription"></label>
+        <input asp-for="Territory.TerritoryDescription" type="text" class="form-control" />
+    </div>
+
+    <p>
+        <button type="submit" class="btn btn-success"> Add </button>
+    </p>
+</form>
